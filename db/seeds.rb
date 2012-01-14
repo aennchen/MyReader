@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Source.create do |s| 
+	s.title = 'tagesschau'
+	s.url = 'http://www.tagesschau.de/xml/rss2'
+end
+
+Source.create do |s|
+	s.title = 'taz'
+	s.url = 'http://www.taz.de/rss.xml'
+end
