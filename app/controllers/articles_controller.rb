@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_filter :authenticate_user! 
 
 	def frontpage
 		@articles = Article.find(:all, :order => 'updated_at DESC', :limit => 10)
