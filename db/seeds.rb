@@ -15,3 +15,6 @@ Source.create do |s|
 	s.title = 'taz'
 	s.url = 'http://www.taz.de/rss.xml'
 end
+
+# Create a default user
+User.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password')
