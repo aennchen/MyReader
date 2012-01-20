@@ -13,7 +13,7 @@ MyReader::Application.routes.draw do
 
   root :to => 'articles#frontpage'
 
-  match 'redirect/:id' => 'redirection#redirect'
+  match 'redirect/:id' => 'articles#redirect', :as => :redirect_article
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

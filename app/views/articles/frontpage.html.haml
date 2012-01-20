@@ -1,4 +1,4 @@
 %ul
   - @articles.each do |a|
     %li 
-      %a{:href => a.url}= a.title
+      =link_to a.title, redirect_article_path(a)
