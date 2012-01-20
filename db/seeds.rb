@@ -6,14 +6,20 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+c = Category.create do |c|
+	c.name = 'News'
+end
+
 Source.create do |s| 
 	s.title = 'tagesschau'
 	s.url = 'http://www.tagesschau.de/xml/rss2'
+	s.category = c
 end
 
 Source.create do |s|
 	s.title = 'taz'
 	s.url = 'http://www.taz.de/rss.xml'
+	s.category = c
 end
 
 # Create a default user
