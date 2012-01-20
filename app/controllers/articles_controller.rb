@@ -7,7 +7,8 @@ class ArticlesController < ApplicationController
 
   def redirect
     a = Article.find(params[:id])
-    # Der User hat auf diesen Artikel geklickt
+    Rating.click a, current_user
+
     redirect_to a.url
   end
 
