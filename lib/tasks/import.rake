@@ -4,6 +4,8 @@ require 'open-uri'
 require 'readability'
 require 'sanitize'
 require 'pp'
+require 'date'
+require 'time'
 
 desc "Imports articles from sources"
 task :import => :environment do 
@@ -19,8 +21,9 @@ task :import => :environment do
 			a = Article.find_or_create_by_url(i.link) do |a|
 				a.title = i.title
 				a.url = i.link
-				a.teaser = i.description.truncate(250, separator: ' ', omission: '')
+				a.teaser = i.description
 				a.source = s
+				a.pub_date = i.date.to_datetime
 			end
 			puts ' - ' + a.title
 

@@ -3,3 +3,51 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+a {
+  color: grey;
+  &:hover { color: #ffb3ff; }
+  &:visited { color: #c458cb; }
+  text-decoration: none;
+}
+
+p#title {
+  font-family: 'Droid Serif';
+  font-size: 1.5em;
+  height: 7px;
+}
+
+div#teaser {
+	width: 60%;
+	padding-top: 10px;
+}
+
+div#categories {
+	background-color: green;
+	height: 30px;
+	padding: 10px 0px 0px 5px;
+	width: 100%;
+	p {margin: 3px 0px 0px 50px; color:white;}
+}
+
+#user_nav{
+	font-size: small;
+	float: right;
+	right: 20 px;
+	padding-right: 10px;
+	padding-top: 10px;
+	position: relative;
+	color: white;
+
+}
+
+#feed{
+	position: absolute;
+	padding-top: 20px;
+	li {list-style-type: none;
+	
+    }
+}
+
+#details{
+	font-size: .8em;
+}

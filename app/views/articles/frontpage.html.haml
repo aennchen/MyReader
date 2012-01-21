@@ -1,4 +1,17 @@
-%ul
+%ul#feed
   - @articles.each do |a|
     %li
-      =link_to a.title, redirect_article_path(a)
+      %p#title
+        =link_to a.title, redirect_article_path(a)
+        %div#details
+          =a.source.title
+          ,
+          =a.pub_date
+          %div#teaser
+            =a.teaser
+%div#categories
+  %p
+    - @categories.each do |c|
+      =link_to c.name, category_path(c)
+
+  
