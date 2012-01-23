@@ -1,11 +1,23 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-selectCat(e) ->
+
+# click handler for category tabs
+categoryClickHandler = (e) ->
   e.preventDefault()
+  
+  #switch highlighted tab
+  $('#categories .active').removeClass 'active'
+  $(e.target).addClass 'active'
+  $(e.target.parent).addClass 'active'
 
-  $("").removeClass("active")
-  $('#content div:first').addClass("active")
+  #switch content pane
+  $('#content .active').hide().removeClass 'active'
+  $(e.target.hash).show().addClass 'active' 
+  
+# register click on category tabs 
+$('body').delegate('#categories ul li a', 'click', categoryClickHandler)
 
-$('#content div').delegate('#categories ul li a', 'click', selectCat)
+# intial setting of active tabs/content panes
+$(document).ready ->
+  $('#content div:first').show().addClass 'active'
+  $('#categories ul li:first').addClass 'active'
+  $('#categories ul li:first a').addClass 'active'

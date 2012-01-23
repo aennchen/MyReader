@@ -24,7 +24,6 @@ div#teaser {
 	background-color: green;
 	height: 30px;
 	padding: 10px 0px 0px 5px;
-	width: 100%;
 
   a{color: white;}
 
@@ -33,6 +32,9 @@ div#teaser {
     padding: 0 10px 0 10px;
     border-right: 1px solid white;
     &:last-child { border: none }
+
+    .active { color: yellow; }
+    a.active { text-decoration: underline; }
   }
 }
 
@@ -62,10 +64,5 @@ div#teaser {
   padding-top: 10px;
 }
 
-#content {
-  div {visibility: hidden;}
-}
+#content div { display: none; }
 
-.active {
-  visibility: visible;
-}

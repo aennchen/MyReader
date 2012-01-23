@@ -2,14 +2,15 @@
   %ul
     - @categories.each do |c|
       %li(id="cat#{c.id.to_s}")
-        =link_to c.name, '#'
+        =link_to c.name, "#articles#{c.id.to_s}"
 
 /static test content
 %section#content
-  - @categories.each do |d|
-    %div(id="contentcat#{d.id.to_s}")
-      =d.name
-      bullocks text
+  - @categories.each do |c|
+    %div(id="articles#{c.id.to_s}")
+      - (1..134).each do 
+        = c.name
+
 
 /dynamic content below
 /
@@ -18,11 +19,11 @@
       %li
         %p#title
           =link_to a.title, redirect_article_path(a)
-          %div#details
-            =a.source.title
+          #details
+            =a.available_source.title
             ,
             =a.pub_date
-            %div#teaser
+            #teaser
               =a.teaser
 
     
