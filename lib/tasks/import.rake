@@ -9,7 +9,7 @@ require 'time'
 
 desc "Imports articles from sources"
 task :import => :environment do 
-	Source.find(:all) do |s|
+	AvailableSource.find(:all) do |s|
 		content = "" # raw content of rss feed will be loaded here
 		open(s.url) do |s| content = s.read end
 		rss = RSS::Parser.parse(content, false)
@@ -22,7 +22,7 @@ task :import => :environment do
 				a.title = i.title
 				a.url = i.link
 				a.teaser = i.description
-				a.source = s
+				a.available_source = s
 				a.pub_date = i.date.to_datetime
 			end
 			puts ' - ' + a.title

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Available source:</b>
+  <%= @user_source.available_source_id %>
+</p>
+
+<p>
+  <b>Alias name:</b>
+  <%= @user_source.alias_name %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @user_source.category_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_source_path(@user_source) %> |
+<%= link_to 'Back', user_sources_path %>

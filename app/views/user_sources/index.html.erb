@@ -1,0 +1,27 @@
+<h1>Listing user_sources</h1>
+
+<table>
+  <tr>
+    <th>Available source</th>
+    <th>Alias name</th>
+    <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user_sources.each do |user_source| %>
+  <tr>
+    <td><%= user_source.available_source_id %></td>
+    <td><%= user_source.alias_name %></td>
+    <td><%= user_source.category_id %></td>
+    <td><%= link_to 'Show', user_source %></td>
+    <td><%= link_to 'Edit', edit_user_source_path(user_source) %></td>
+    <td><%= link_to 'Destroy', user_source, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User source', new_user_source_path %>

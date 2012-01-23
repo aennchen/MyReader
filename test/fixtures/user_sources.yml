@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  available_source_id: 1
+  alias_name: MyString
+  category_id: 1
+
+two:
+  available_source_id: 1
+  alias_name: MyString
+  category_id: 1
