@@ -1,17 +1,28 @@
-%ul#feed
-  - @articles.each do |a|
-    %li
-      %p#title
-        =link_to a.title, redirect_article_path(a)
-        %div#details
-          =a.source.title
-          ,
-          =a.pub_date
-          %div#teaser
-            =a.teaser
-%div#categories
-  %p
+%section#categories
+  %ul
     - @categories.each do |c|
-      =link_to c.name, category_path(c)
+      %li(id="cat#{c.id.to_s}")
+        =link_to c.name, '#'
 
-  
+/static test content
+%section#content
+  - @categories.each do |d|
+    %div(id="contentcat#{d.id.to_s}")
+      =d.name
+      bullocks text
+
+/dynamic content below
+/
+  %ul#feed
+    - @articles.each do |a|
+      %li
+        %p#title
+          =link_to a.title, redirect_article_path(a)
+          %div#details
+            =a.source.title
+            ,
+            =a.pub_date
+            %div#teaser
+              =a.teaser
+
+    

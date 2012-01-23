@@ -1,8 +1,7 @@
-body{
-	margin:0;
-	padding:0;
-	font-family: 'Droid Sans';
+@import "reset";
 
+body{
+	font-family: 'Droid Sans';
 }
 
 @import "articles";

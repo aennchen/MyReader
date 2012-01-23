@@ -13,7 +13,6 @@ a {
 p#title {
   font-family: 'Droid Serif';
   font-size: 1.5em;
-  height: 7px;
 }
 
 div#teaser {
@@ -21,12 +20,20 @@ div#teaser {
 	padding-top: 10px;
 }
 
-div#categories {
+#categories {
 	background-color: green;
 	height: 30px;
 	padding: 10px 0px 0px 5px;
 	width: 100%;
-	p {margin: 3px 0px 0px 50px; color:white;}
+
+  a{color: white;}
+
+  ul li {
+    display: inline;
+    padding: 0 10px 0 10px;
+    border-right: 1px solid white;
+    &:last-child { border: none }
+  }
 }
 
 #user_nav{
@@ -42,12 +49,23 @@ div#categories {
 
 #feed{
 	position: absolute;
-	padding-top: 20px;
-	li {list-style-type: none;
+	padding: 20px 0px 0px 20px;
+	li {
+    list-style-type: none;
+    padding: 20px 0px 0px 0px; 
 	
     }
 }
 
 #details{
 	font-size: .8em;
+  padding-top: 10px;
+}
+
+#content {
+  div {visibility: hidden;}
+}
+
+.active {
+  visibility: visible;
 }
