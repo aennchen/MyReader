@@ -1,4 +1,6 @@
 MyReader::Application.routes.draw do
+  resources :user_sources
+
   resources :ratings
 
   resources :categories
