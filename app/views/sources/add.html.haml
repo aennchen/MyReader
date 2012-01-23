@@ -1,0 +1,23 @@
+%section#form
+  %h1 Add sources to your category (which one anyway?)
+  %p Enter a name or an address of the source you want to add
+  %p
+    %input#query{type: :text}
+    %input#submit{type: :submit, value: 'Search'}
+  %p#count 
+
+%section#results
+  #blanco-result.result
+    %h2 Titel der Quelle
+    %p 
+      %a{href: '#'} URL der Quelle  
+    
+      
+  #result-list
+    
+  #no-results
+    Sorry, no results. May be you want to add your own? 
+
+%section#add-manual
+  Add a modal add source dialog
+    

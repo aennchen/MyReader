@@ -9,6 +9,7 @@ MyReader::Application.routes.draw do
 
   match 'redirect/:id' => 'articles#redirect', :as => :redirect_article
   match 'sources/search' => 'sources#search'
+  match 'sources/add' => 'sources#add', :as => :sources_add
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
