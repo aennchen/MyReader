@@ -1,23 +1,14 @@
 MyReader::Application.routes.draw do
-  resources :user_sources
-
-  resources :ratings
 
   resources :categories
 
-  resources :articles
-
-  devise_for :users
-
   ActiveAdmin.routes(self)
-
   devise_for :users, ActiveAdmin::Devise.config
-
-  resources :sources
 
   root :to => 'articles#frontpage'
 
   match 'redirect/:id' => 'articles#redirect', :as => :redirect_article
+  match 'sources/search' => 'sources#search'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

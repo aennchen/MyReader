@@ -1,4 +1,35 @@
 class SourcesController < ApplicationController
+  
+  def add
+
+  end
+
+  # GET /sources/search.json
+  # Searches for sources to add to the users category
+  def search
+    error = nil
+    sources = nil
+    code = 200
+
+    if params[:q].nil? then
+       error = 'empty query'
+       code = 403
+
+    elsif params[:q].length < 3 then
+       error = 'query string too short'
+       code = 403
+       
+    else
+      q = '%' + params[:q] + '%'
+      sources = AvailableSource.where('title LIKE ? OR url LIKE ?', q, q)
+    end
+
+    respond_to do |format|
+      format.json { render json: sources }
+    end
+  end
+
+=begin
   # GET /sources
   # GET /sources.json
   def index
@@ -80,4 +111,6 @@ class SourcesController < ApplicationController
       format.json { head :ok }
     end
   end
+
+=end
 end
