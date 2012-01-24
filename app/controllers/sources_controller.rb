@@ -1,31 +1,35 @@
 class SourcesController < ApplicationController
   
-  def add
+  #provides pluralize
+  include ActionView::Helpers::TextHelper
 
+  def add
+    #show search form, nothing fancy here.
   end
 
   # GET /sources/search.json
   # Searches for sources to add to the users category
   def search
-    error = nil
+    msg = nil
     sources = nil
-    code = 200
+    status = :ok
 
     if params[:q].nil? then
-       error = 'empty query'
-       code = 403
+       msg = 'empty query'
+       status = :length_required
 
     elsif params[:q].length < 3 then
-       error = 'query string too short'
-       code = 403
+       msg = 'query string too short'
+       status = :length_required
        
     else
       q = '%' + params[:q] + '%'
       sources = AvailableSource.where('title LIKE ? OR url LIKE ?', q, q)
+      msg = 'Found ' + pluralize(sources.length.to_s, 'source')
     end
 
     respond_to do |format|
-      format.json { render json: sources }
+      format.json { render json: [ status: status , result: sources, msg: msg ], status: status }.to_json
     end
   end
 
