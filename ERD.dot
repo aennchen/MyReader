@@ -1,0 +1,94 @@
+digraph MyReader {
+  rankdir = "LR"; ranksep = "0.5"; nodesep = "0.4"; pad = "0.4,0.4"; margin = "0,0"; concentrate = "true"; labelloc = "t"; fontsize = "13"; fontname = "Arial Bold";
+  node [shape = "Mrecord", fontsize = "10", fontname = "Arial", margin = "0.07,0.05", penwidth = "1.0"];
+  edge [fontname = "Arial", fontsize = "7", dir = "both", arrowsize = "0.9", penwidth = "1.0", labelangle = "32", labeldistance = "1.8"];
+  label = "MyReader domain model\n\n";
+  "m_ActiveAdmin::Comment" [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">ActiveAdmin::Comment</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="author_id">author_id <font face="Arial Italic" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="author_type">author_type <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="body">body <font face="Arial Italic" color="grey60">text ∗</font></td></tr>
+  <tr><td align="left" width="130" port="namespace">namespace <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="resource_type">resource_type <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+</table>
+>];
+  m_Article [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Article</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="guid">guid <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="pub_date">pub_date <font face="Arial Italic" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="teaser">teaser <font face="Arial Italic" color="grey60">text</font></td></tr>
+  <tr><td align="left" width="130" port="title">title <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="url">url <font face="Arial Italic" color="grey60">string</font></td></tr>
+</table>
+>];
+  m_AvailableSource [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">AvailableSource</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="title">title <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="url">url <font face="Arial Italic" color="grey60">string</font></td></tr>
+</table>
+>];
+  m_Category [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Category</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="name">name <font face="Arial Italic" color="grey60">string</font></td></tr>
+</table>
+>];
+  m_Rating [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">Rating</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="rating">rating <font face="Arial Italic" color="grey60">integer ∗</font></td></tr>
+</table>
+>];
+  m_User [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">User</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="current_sign_in_at">current_sign_in_at <font face="Arial Italic" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="current_sign_in_ip">current_sign_in_ip <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="email">email <font face="Arial Italic" color="grey60">string ∗</font></td></tr>
+  <tr><td align="left" width="130" port="encrypted_password">encrypted_password <font face="Arial Italic" color="grey60">string (128) ∗</font></td></tr>
+  <tr><td align="left" width="130" port="last_sign_in_at">last_sign_in_at <font face="Arial Italic" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="last_sign_in_ip">last_sign_in_ip <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="remember_created_at">remember_created_at <font face="Arial Italic" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="reset_password_sent_at">reset_password_sent_at <font face="Arial Italic" color="grey60">datetime</font></td></tr>
+  <tr><td align="left" width="130" port="reset_password_token">reset_password_token <font face="Arial Italic" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="sign_in_count">sign_in_count <font face="Arial Italic" color="grey60">integer</font></td></tr>
+</table>
+>];
+  m_UserSource [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial Bold" point-size="11">UserSource</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="alias_name">alias_name <font face="Arial Italic" color="grey60">string</font></td></tr>
+</table>
+>];
+  m_AvailableSource -> "m_ActiveAdmin::Comment" [arrowhead = "normal", arrowtail = "none", weight = "1"]
+  m_Category -> "m_ActiveAdmin::Comment" [arrowhead = "normal", arrowtail = "none", weight = "1"]
+  m_AvailableSource -> m_Article [arrowhead = "normal", arrowtail = "none", weight = "2"]
+  m_AvailableSource -> m_UserSource [arrowhead = "normal", arrowtail = "none", weight = "2"]
+  m_User -> m_Category [arrowhead = "normal", arrowtail = "none", weight = "2"]
+  m_Category -> m_UserSource [arrowhead = "normal", arrowtail = "none", weight = "2"]
+  m_Category -> m_AvailableSource [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "1", constraint = "false"]
+  m_Category -> m_Article [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "1", constraint = "false"]
+  m_User -> m_Rating [arrowhead = "normal", arrowtail = "none", weight = "2"]
+  m_User -> m_UserSource [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "1", constraint = "false"]
+  m_User -> m_AvailableSource [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "1", constraint = "false"]
+  m_User -> m_Article [style = "dotted", arrowhead = "normal", arrowtail = "none", weight = "1", constraint = "false"]
+  m_Article -> m_Rating [arrowhead = "normal", arrowtail = "none", weight = "2"]
+  m_UserSource -> m_User [style = "dotted", arrowhead = "none", arrowtail = "none", weight = "1", constraint = "false"]
+}

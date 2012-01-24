@@ -1,12 +1,13 @@
 class ArticlesController < ApplicationController
   before_filter :authenticate_user! 
 
-	def frontpage
-		
-    @articles = Article.find(:all, :order => 'pub_date DESC', :limit => 10)
-		@categories = Category.find(:all)
+	def frontpage		
+		@user_categories = Category.where(user_id: current_user)
+    @articles = Hash.new
 
-    #css id für categories erzeugen
+    @user_categories.each do |uc|
+      @articles[uc.id] = Article.find_by_category(uc)
+    end
 	end
 
   def redirect
@@ -15,5 +16,4 @@ class ArticlesController < ApplicationController
 
     redirect_to a.url
   end
-
 end

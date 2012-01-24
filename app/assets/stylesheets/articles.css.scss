@@ -50,13 +50,7 @@ div#teaser {
 }
 
 #feed{
-	position: absolute;
-	padding: 20px 0px 0px 20px;
-	li {
-    list-style-type: none;
-    padding: 20px 0px 0px 0px; 
-	
-    }
+  
 }
 
 #details{
@@ -64,5 +58,16 @@ div#teaser {
   padding-top: 10px;
 }
 
-#content div { display: none; }
-
+#content {
+  position: absolute;
+  padding: 20px 0px 0px 20px;
+  li {
+    list-style-type: none;
+    padding: 20px 0px 0px 0px;
+  }
+  div {
+  .active {display: block;}
+  display: none;
+  }
+  div ul li div {display: block;}
+}

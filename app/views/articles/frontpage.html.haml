@@ -1,29 +1,22 @@
 %section#categories
   %ul
-    - @categories.each do |c|
+    - @user_categories.each do |c|
       %li(id="cat#{c.id.to_s}")
         =link_to c.name, "#articles#{c.id.to_s}"
 
-/static test content
 %section#content
-  - @categories.each do |c|
+  - @user_categories.each do |c|
     %div(id="articles#{c.id.to_s}")
-      - (1..134).each do 
-        = c.name
+      - @articles[c.id].each do |a|
+        %ul
+          %li
+            %p#title
+              =link_to a.title, redirect_article_path(a)
+              #details
+                =a.available_source.title
+                ,
+                =a.pub_date
+                #teaser
+                  =a.teaser
 
 
-/dynamic content below
-/
-  %ul#feed
-    - @articles.each do |a|
-      %li
-        %p#title
-          =link_to a.title, redirect_article_path(a)
-          #details
-            =a.available_source.title
-            ,
-            =a.pub_date
-            #teaser
-              =a.teaser
-
-    
